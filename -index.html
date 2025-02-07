@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Patient Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets/img/TestLogo.svg" alt="Tech.Care Logo" height="40">
+      <!-- <span class="ml-2 font-weight-bold">Tech.Care</span> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="assets/img/home_FILL0_wght300_GRAD0_opsz24.svg" alt="Overview icon"> Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active  text-white rounded-pill px-3" href="#">
+          <img src="assets/img/group_FILL0_wght300_GRAD0_opsz24.svg" alt="Overview icon"> Patients
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="assets/img/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="Overview icon"> Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="assets/img/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt="Overview icon"> Message</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="assets/img/credit_card_FILL0_wght300_GRAD0_opsz24.svg" alt="Overview icon"> Transactions</a>
+      </li>
+    </ul>
+    <div class="navbar-text d-flex align-items-center">
+      <img src="assets/img/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc@2x.png" alt="Dr. Jose Simmons" class="rounded-circle" height="40">
+      <div class="ml-3 ">
+        <span class="d-block font-weight-bold py-1">Dr. Jose Simmons</span>
+        <small>General Practitioner</small>
+      </div>
+      
+      <img class="ml-4" src="assets/img/settings_FILL0_wght300_GRAD0_opsz24.svg " alt="Overview icon">
+      <img class="ml-3" src="assets/img/more_vert_FILL0_wght300_GRAD0_opsz24.svg " alt="Overview icon">
+    </div>
+</div>
+  </nav>
+   <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Left Column - Patient List -->
+            <div class="col-12 col-md-3 d-flex flex-column">
+                <div class="sidebar flex-grow-1">
+                    <div class="d-flex align-items-center  justify-content-between pt-4 pb-3 px-4">
+                    <h2 class="heading">Patient</h2>
+                    <img src="assets/img/search_FILL0_wght300_GRAD0_opsz24.svg">
+                </div>
+                <div id="patientList" class="scrollable-list">
+                    <!-- Patient list items -->
+                </div>
+                </div>
+            </div>
+
+            <!-- Middle Column - Diagnosis History -->
+            <div class="col-12 col-md-6 d-flex flex-column">
+                <div class="bg-white diagnostic-history">
+                    <h2 class="heading mb-4">Diagnosis History</h2>
+               
+                <div class="diagnosis-chart">
+    <div class="bp-chart">
+        <div class="d-flex justify-content-between align-items-center ">
+            <h3 class="chart-heading font-weight-bold">Blood Pressure</h3>
+             <select class="form-select form-select-sm" style="width: auto;">
+                <option>Last 6 months</option>
+                <option>Last 1 month</option>
+                <option>Last 3 months</option>
+                <option>Last 12 months</option>
+            </select>
+        </div>
+        <!-- Chart will be rendered here -->
+        <div class="chart-area">
+
+            <!-- Add your chart rendering logic or placeholder here -->
+        </div>
+    </div>
+    <div class="metrics-container col-lg-4 col-sm-12 ">
+        <div class="metric-item">
+            <div class="metric-header">
+                <div class="dot systolic-dot"></div>
+                <span class="font-weight-bold">Systolic</span>
+            </div>
+            <div class="value font-weight-bold">160</div>
+            <div class="status">
+                <img src="assets/img/ArrowUp.svg" alt="Arrow Up">
+                Higher than Average
+            </div>
+        </div>
+<hr>
+        <div class="metric-item">
+            <div class="metric-header">
+                <div class="dot diastolic-dot"></div>
+                <span class="font-weight-bold">Diastolic</span>
+            </div>
+            <div class="value font-weight-bold">78</div>
+            <div class="status">
+                <img src="assets/img/ArrowDown.svg" alt="Arrow Down">
+                Lower than Average
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <div class="vital-stats">
+                    <div class="vital-card respiratory">
+                        <img class="vital-card-img" src="assets/img/respiratory rate.svg" alt="">
+                        <div class="vital-name mt-4">Respiratory Rate</div>
+                        <div class="vital-value pb-3">20 bpm</div>
+                        <span class="status-tag">Normal</span>
+                    </div>
+                    <div class="vital-card temperature">
+                        <img class="vital-card-img" src="assets/img/temperature.svg" alt="">
+                        <div class="vital-name mt-4">Temperature</div>
+                        <div class="vital-value pb-3">98.6°F</div>
+                        <span class="status-tag">Normal</span>
+                    </div>
+                    <div class="vital-card heart-rate">
+                        <img class="vital-card-img" src="assets/img/HeartBPM.svg" alt="">
+                        <div class="vital-name mt-3">Heart Rate</div>
+                        <div class="vital-value pb-3">78 bpm</div>
+                        <span class="status-tag "><img class="pr-1" src="assets/img/ArrowDown.svg" alt=""> Lower than Average</span>
+                    </div>
+                </div>
+                </div>
+
+                <div class="bg-white diagnostic-list flex-grow-1">
+  
+        <h2 class="heading mb-4">Diagnostic List</h2>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="rounded-header">
+            <tr>
+              <th>Problem/Diagnosis</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody class="scrollable-body">
+            <tr>
+              <td>Hypertension</td>
+              <td>Chronic high blood pressure</td>
+              <td>Under Observation</td>
+            </tr>
+            <tr>
+              <td>Type 2 Diabetes</td>
+              <td>Insulin resistance and elevated blood sugar</td>
+              <td>Cured</td>
+            </tr>
+            <tr>
+              <td>Asthma</td>
+              <td>Recurrent episodes of bronchial constriction</td>
+              <td>Inactive</td>
+            </tr>
+            <tr>
+              <td>Osteoarthritis</td>
+              <td>Degenerative joint disease</td>
+              <td>Under Observation</td>
+            </tr>
+            <tr>
+              <td>Anemia</td>
+              <td>Low red blood cell count</td>
+              <td>Treated</td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+  
+</div>
+
+
+                
+            </div>
+
+            <!-- Right Column - Patient Info -->
+            <div class="col-12 col-md-3 d-flex flex-column">
+               <div class="bg-white patient-profile ">
+                    <img src="assets/img/Layer 2.png" alt="Jessica Taylor" class="profile-image">
+                <h2 class="heading">Jessica Taylor</h2>
+                
+                <div class="info-section">
+                    <div class="info-item d-flex">
+                        <img src="assets/img/BirthIcon.svg">
+                        <div class="px-3">
+                        <div class="info-label">Date Of Birth</div>
+                        <div class="info-desc">August 23, 1996</div>
+                    </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-item d-flex">
+                        <img src="assets/img/FemaleIcon.svg">
+                        <div class="px-3">
+                        <div class="info-label">Gender</div>
+                        <div class="info-desc">Female</div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="info-item">
+                        <div class="info-item d-flex">
+                        <img src="assets/img/PhoneIcon.svg">
+                        <div class="px-3">
+                        <div class="info-label">Contact Info</div>
+                        <div class="info-desc">(415) 555-1234</div>
+                    </div>
+                    </div>
+                </div>
+                    <div class="info-item">
+                        <div class="info-item d-flex">
+                        <img src="assets/img/PhoneIcon.svg">
+                        <div class="px-3">
+                        <div class="info-label">Emergency Contacts</div>
+                        <div class="info-desc">(415) 555-5678</div>
+                    </div>
+                    </div>
+                </div>
+                    <div class="info-item">
+                        <div class="info-item d-flex">
+                        <img src="assets/img/InsuranceIcon.svg">
+                        <div class="px-3">
+                        <div class="info-label">Insurance Provider</div>
+                        <div class="info-desc">Sunrise Health Assurance</div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div>
+                    <a href="" class="btn info-btn px-4 mt-3">Show All Information</a>
+                </div>
+               </div>
+
+                <div class="lab-results bg-white flex-grow-1">
+                    <h5 class="heading">Lab Results</h5>
+                    <div class="scrollable-downloads">
+                        <div class="download-item">
+                        <span>Blood Tests</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                    <div class="download-item active">
+                        <span>CT Scans</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                    <div class="download-item">
+                        <span>Radiology Reports</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                    <div class="download-item">
+                        <span>X-Rays</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                    <div class="download-item">
+                        <span>Urine Test</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                     <div class="download-item">
+                        <span>X-Rays</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                    <div class="download-item">
+                        <span>Urine Test</span>
+                        <img src="assets/img/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="download">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
